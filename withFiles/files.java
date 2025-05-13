@@ -1,17 +1,17 @@
 import java.io.*;
-import java.util.*;
+public class files{
+    public static void main(String args[]) throws IOException {
 
-public class files {
-    public static void main(String args[]){
+        String filePath = "C:\\Work\\GitHub\\Java-Practice\\withFiles\\letter.txt";
 
-        File inputFile = new File("C:\\Work\\GitHub\\Java-Practice\\withFiles\\letter.txt");
-        try (Scanner sc = new Scanner(inputFile)) {
-            while (sc.hasNextLine()) {
-                String line = sc.nextLine();
-                System.out.println(line);
-            }
-        } catch (FileNotFoundException e) {
-            System.err.println("File not found: " + e.getMessage());
-        }
+        //Create an object
+        read Rfile = new read(filePath);
+        //Call
+        Rfile.readFile();
+
+        //Create an object
+        write Wfile = new write("file.txt", "Hello deshan");
+        //Call
+        Wfile.writeFile();
     }
 }
