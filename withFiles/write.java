@@ -1,25 +1,20 @@
 
-import java.io.*;
-public class write {
+import java.io.FileWriter;
+import java.io.PrintWriter;
 
-    String line;
-    String fileName;
-    //constructor
-    public write(String name, String line){
-        this.line = line;
-        this.fileName = name;
+public class write{
+    String fileName, Content;
+
+    public write(String fileName, String Content){
+        this.fileName = fileName;
+        this.Content = Content;
     }
-
-    public void writeFile() throws IOException {
-        try {
-            PrintWriter writer = new PrintWriter(new FileWriter(fileName, true));
-            //write
-            writer.println(line);
-            writer.close(); // Always close the writer
-            System.out.println("File written successfully.");
-        } catch (FileNotFoundException e) {
-            System.out.println("An error occurred while writing the file");
-            e.printStackTrace();
+    public void wFile() throws Exception{
+        try (PrintWriter writer = new PrintWriter(new FileWriter(fileName, true))) {
+            writer.println(Content);
+            System.out.println("File written successfully");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
 }

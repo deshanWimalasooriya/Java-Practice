@@ -1,17 +1,37 @@
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class files{
-    public static void main(String args[]) throws IOException {
+    public static void main(String args[]) throws Exception{
+        File inputFile = new File("file.txt");
+        File readFile = new File("input.txt");
 
-        String filePath = "C:\\Work\\GitHub\\Java-Practice\\withFiles\\letter.txt";
+        try(Scanner scan = new Scanner(inputFile)){
 
-        //Create an object
-        read Rfile = new read(filePath);
-        //Call
-        Rfile.readFile();
+            while(scan.hasNextLine()){
+                String line = scan.nextLine();
+                System.out.println(line);
+            }
 
-        //Create an object
-        write Wfile = new write("file.txt", "Hello deshan");
-        //Call
-        Wfile.writeFile();
+        } catch (FileNotFoundException e){
+            System.out.println(e.getMessage());
+        }
+
+        //Calculating
+        try (Scanner scan = new Scanner(readFile)) {
+            double sum = 0;
+            while(scan.hasNextDouble()){
+                double num = scan.nextDouble();
+                write w = new write("file.txt", "-> " +  String.valueOf(num));
+                w.wFile();
+                sum += num;
+            }
+
+            write sumWrite = new write("file.txt", "Total: " + String.valueOf(sum));
+            sumWrite.wFile();
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
