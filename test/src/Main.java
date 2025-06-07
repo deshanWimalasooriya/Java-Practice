@@ -1,61 +1,76 @@
+import javax.swing.text.Document;
 import java.io.*;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
-import java.util.*;
-
+import java.Jsoup
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException, IOException {
 
-        //Task 1(Find the word "Java" in a string.)
+        File input = new File("web.html");
+
+        Document document = Jsoup
+
+
         /*
+
+        //Task 1(Find the word "Java" in a string.)
+
         String input = "I love Java programming";
         Pattern pattern = Pattern.compile("Java");
         Matcher matcher = pattern.matcher(input);
         System.out.println(matcher.find());
-         */
+
 
         //Task 2 (2. 🔢 Match Digits)
-        /*
         String input  = "Order 23, Item 45, Qty 10";
         Pattern pattern = Pattern.compile("\\d+");
         Matcher matcher = pattern.matcher(input);
         while(matcher.find()){
             System.out.println(matcher.group());
         }
-         */
 
         //Task 3. 🎯 Match Specific Word
-        /*
         String input = "My cat is playing with a dog";
         Pattern pattern = Pattern.compile("cat|dog");
         Matcher matcher = pattern.matcher(input);
         while(matcher.find()){
             System.out.println(matcher.group());
         }
-         */
 
         //Task 4. 💬 Match All Words
-        /*
         String input = "Java is awesome!";
         Pattern pattern = Pattern.compile("\\b\\w+\\b");
         Matcher matcher = pattern.matcher(input);
         while(matcher.find()){
             System.out.println(matcher.group());
         }
-         */
 
         //Task Replace all space with hypen
-        /*
         String input = "My name is     Deshan  Wimalaooriya";
         String updated = input.replaceAll("\\s+", " ");
         System.out.println(input);
         System.out.println(updated);
-         */
+
+        //Task for split
+        String num = "i am deshan wimalasooriya";
+        String[] words = num.split(" ");
+
+        for (String word: words){
+            System.out.println(word);
+        }
 
 
+        String fileName = "web.html";
+        FileReader newFile = new FileReader(fileName);
 
+        BufferedReader reader = new BufferedReader(newFile);
 
+        try(reader){
+            String line;
+            while ((line = reader.readLine()) != null){
+                System.out.println(line);
+            }
+        }
+        */
     }
 }
 
