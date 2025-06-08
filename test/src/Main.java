@@ -1,13 +1,46 @@
 import javax.swing.text.Document;
 import java.io.*;
-import java.Jsoup
+import java.lang.reflect.Type;
+import java.sql.SQLOutput;
+import java.util.List;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 public class Main {
+
     public static void main(String[] args) throws FileNotFoundException, IOException {
 
-        File input = new File("web.html");
 
-        Document document = Jsoup
+        /*
+        String fileName = "data.json";
+        Gson gson = new Gson();
+        FileReader reader = new FileReader(fileName);
+
+        try(reader){
+
+            // Define the type of the list
+            Type userListType = new TypeToken<List<Person>>(){}.getType();
+
+            // Deserialize JSON into List<User>
+            List<Person> users = gson.fromJson(reader, userListType);
+
+            // Print each user
+            for (Person user : users) {
+                if (user.getId() == 3) {
+                    System.out.println("ID: " + user.getId());
+                    System.out.println("Name: " + user.getName());
+                    System.out.println("Email: " + user.getEmail());
+                    System.out.println("Age: " + user.getAge());
+                    System.out.println("Is Student: " + user.isStudent());
+                    System.out.println("-----------------------");
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+         */
 
 
         /*
