@@ -3,15 +3,33 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.sql.SQLOutput;
 import java.util.List;
+import javax.swing.text.Document;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Element;
 
 public class Main {
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
 
+        //read html file
+        /*
+        try{
+            File file = new File("web.html");
+            org.jsoup.nodes.Document doc = Jsoup.parse(file, "UTF-8");
+            System.out.println("Title: " + doc.title());
 
+            for(Element p: doc.select("p")){
+                System.out.println("-" + p.text());
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+         */
+
+        //read json file
         /*
         String fileName = "data.json";
         Gson gson = new Gson();
@@ -41,8 +59,7 @@ public class Main {
         }
 
          */
-
-
+        
         /*
 
         //Task 1(Find the word "Java" in a string.)
