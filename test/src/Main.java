@@ -1,3 +1,87 @@
+import javax.lang.model.element.Element;
+import java.sql.SQLOutput;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+public class Main {
+    public static void main(String[] args){
+        //lambda expression
+        /*
+        List<String> names = new ArrayList<>();
+        names.add("Deshan");
+        names.add("Dilanka");
+        names.add("Chamara");
+
+        System.out.println(names);
+
+        names.forEach(name-> System.out.println("hello, " + name +"!" ));
+         */
+        
+        /*
+        List<Integer> numbers = List.of(1,2,3,4,5,6,7,8,9,10);
+
+        int sumOfSquars = numbers.stream()
+                .filter(x-> x%2==0)
+                .map(x-> x*x)
+                .reduce(0, Integer::sum);
+
+        System.out.println(sumOfSquars);
+
+         */
+
+        //Declarative Programming Examples
+        //Example 1
+        /*
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        int result = numbers.stream()
+                .filter(num -> num % 2 == 0)
+                .mapToInt(Integer::intValue)
+                .sum(); System.out.println(result);
+
+         */
+
+        //Example 2
+        /*
+        List<String> names = List.of("Deshan","Chamara", "Sithum", "Dilanka");
+
+        List<String> result = names.stream()
+                .filter(name-> name.startsWith("D"))
+                .collect(Collectors.toList());
+
+        for(String element: result){
+            System.out.printf(element);
+        }
+
+         */
+
+        //Example 3
+        /*
+        List<Integer> numbers = List.of(1,7,5,63,9,4,7,8,9,10);
+
+        List<Integer> results = numbers.stream()
+                .map(n-> n*10)
+                .collect(Collectors.toList());
+
+        for(Integer number: results){
+            System.out.println(number);
+        }
+
+         */
+
+        //Example 4
+        /*
+        List<String> names = List.of("hi", "elephant", "sun", "banana");
+        Optional<String> first = names.stream()
+                .filter(word-> word.length() > 5)
+                .findFirst();
+
+        System.out.println(first);
+         */
+    }
+}
+/*
 import javax.swing.text.Document;
 import java.io.*;
 import java.lang.reflect.Type;
@@ -59,7 +143,7 @@ public class Main {
         }
 
          */
-        
+
         /*
 
         //Task 1(Find the word "Java" in a string.)
@@ -120,10 +204,9 @@ public class Main {
                 System.out.println(line);
             }
         }
-        */
-    }
-}
 
+    }
+} */
 /*
         File inputFile = new File("input.txt");
         File outputFile = new File("output.txt");
