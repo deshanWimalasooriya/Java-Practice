@@ -1,0 +1,3 @@
+[{"id":1,"title":"Clean Code","author":"Robert C. Martin","available":true},
+  {"id":2,"title":"Effective Java","author":"Joshua Bloch","available":false},
+  {"id":3,"title":"Game of Thrones","author":"Deshan","available":true}]

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-
+/*
 public class Main {
     public static void main(String[] args){
         //lambda expression
@@ -78,10 +78,11 @@ public class Main {
                 .findFirst();
 
         System.out.println(first);
-         */
+
     }
-}
-/*
+}*/
+
+
 import javax.swing.text.Document;
 import java.io.*;
 import java.lang.reflect.Type;
@@ -92,11 +93,10 @@ import javax.swing.text.Document;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.jsoup.Jsoup;
-import org.jsoup.nodes.Element;
 
 public class Main {
 
-    public static void main(String[] args) throws FileNotFoundException, IOException {
+    public static void main(String[] args) throws IOException {
 
         //read html file
         /*
@@ -114,7 +114,6 @@ public class Main {
          */
 
         //read json file
-        /*
         String fileName = "data.json";
         Gson gson = new Gson();
         FileReader reader = new FileReader(fileName);
@@ -142,12 +141,9 @@ public class Main {
             e.printStackTrace();
         }
 
-         */
-
-        /*
 
         //Task 1(Find the word "Java" in a string.)
-
+        /*
         String input = "I love Java programming";
         Pattern pattern = Pattern.compile("Java");
         Matcher matcher = pattern.matcher(input);
@@ -205,8 +201,10 @@ public class Main {
             }
         }
 
+ */
+
     }
-} */
+}
 /*
         File inputFile = new File("input.txt");
         File outputFile = new File("output.txt");
