@@ -1,13 +1,10 @@
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
-import java.io.FileReader;
 
 public class Main {
 
@@ -39,8 +36,19 @@ public class Main {
         saveBook(books);
     }
 
+    //update book availability
+    public static void updateBookAvailability(int id, List<Book> books, boolean availability){
+        for(Book book: books){
+            if (id == book.id){
+                book.available = availability;
+                saveBook(books);
+            }
+        }
+    }
+
+
     // Main method to run the program
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         List<Book> books = loadBooks();
 
         Book newBook = new Book(3,"Game of Thrones", "Deshan", true);
@@ -54,5 +62,21 @@ public class Main {
             System.out.println(book.available);
         }
 
+        updateBookAvailability(3, books, true);
+
+        for(Book book: books){
+            if(book.id ==3){
+                if(book.available = true){
+                    System.out.println("The book " + book.title + " is available");
+                }else{
+                    System.out.println("The book " + book.title + " is not available");
+                }
+            }
+        }
+
+        try (FileWriter newWriter = new FileWriter("output.json")){
+            List<Book> newBooks = loadBooks();
+            new Gson().toJson(newBooks, newWriter);
+        }
     }
 }
